@@ -1,0 +1,30 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _4._9
+{
+    class Program
+    {
+        
+
+        static void Main(string[] args)
+        {
+            int total = 0;
+
+            for (int x = 1; x < 1000; x ++)
+            {
+                if (x % 3 == 0 || x % 5 == 0)
+                {
+                    total = total + x;
+                }
+            }
+
+            Console.WriteLine("Sum = " + total);
+
+            Console.ReadKey();
+        }
+    }
+}
