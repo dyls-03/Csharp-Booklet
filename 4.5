@@ -1,0 +1,37 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _4._5
+{
+    class Program
+    {
+        
+
+        static void Main(string[] args)
+        {
+            string ans = "no";
+            double total = 0;
+            int x = 0;
+
+            do
+            {
+                Console.WriteLine("Do you want to put an item in your basket");
+                ans = Console.ReadLine();
+                if (ans == "yes")
+                {
+                    x = x + 1;
+                    Console.WriteLine("What is the price of your item?");
+                    double price = Convert.ToDouble(Console.ReadLine());
+                    total = total + price;
+                }
+
+            } while (ans == "yes");
+
+            Console.WriteLine("You have {0} items and the value of your baskey is {1}", x, total);
+            Console.ReadKey();
+        }
+    }
+}
