@@ -1,0 +1,26 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _4._8
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            const double interest = 1.02;
+            double total = 50;
+            int x = 0;
+
+            do
+            {
+                total = total * interest;
+                x = x + 1;
+            } while (total < 100);
+            Console.WriteLine("It would take {0} months", x);
+            Console.ReadKey();
+        }
+    }
+}
