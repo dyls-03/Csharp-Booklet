@@ -1,0 +1,48 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _3._1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("A program to find the highest number in an unsorted range of 3");
+            Console.WriteLine("Please enter your first number");
+            int num1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Please enter your second number");
+            int num2 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Please enter your third number");
+            int num3 = Convert.ToInt32(Console.ReadLine());
+
+            if (num1 > num2)
+            {
+                if (num1 > num3)
+                {
+                    Console.WriteLine(num1 + " is the largest number");
+                }
+                else
+                {
+                    Console.WriteLine(num3 + " is the largest number");
+                }
+            }
+            else
+            {
+                if (num2 > num3)
+                {
+                    Console.WriteLine(num2 + " is the largest number");
+                }
+                else
+                {
+                    Console.WriteLine(num3 + " is the largest number");
+                }
+            }
+
+            Console.ReadKey();
+
+        }
+    }
+}
