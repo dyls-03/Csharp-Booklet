@@ -1,0 +1,31 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _3._3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Please enter your username");
+            string user = Console.ReadLine();
+            Console.WriteLine("Please enter your password");
+            string pass = Console.ReadLine();
+
+            if (user == "KGrid34" && pass == "KG7&56@")
+            {
+                Console.WriteLine("You are logged in");
+            }
+            else
+            {
+                Console.WriteLine("The username or password is incorrect - log in failed");
+            }
+
+            Console.ReadKey();
+
+        }
+    }
+}
