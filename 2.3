@@ -1,0 +1,27 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _2._3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Please enter the length of the first side");
+            double num1 = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Please enter the length of the second side");
+            double num2 = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Please enter the length of the third side");
+            double num3 = Convert.ToDouble(Console.ReadLine());
+            double s = (num1 + num2 + num3) / 2;
+            double A = s * (s - num1)*(s - num2)*(s - num3);
+            double area = Math.Sqrt(A);
+            Console.WriteLine("The area of this triangle is " + area);
+            Console.ReadKey();
+
+        }
+    }
+}
