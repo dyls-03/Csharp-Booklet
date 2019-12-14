@@ -1,0 +1,50 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _4._7
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Random rnd = new Random();
+            int score = 0;
+
+            Console.WriteLine("Are your ready to be tested - yes or no?");
+            string resp = Console.ReadLine();
+            if (resp == "yes")
+            {
+                for (int x = 1; x <= 10; x++)
+                {
+                    int num1 = rnd.Next(1, 12);
+                    int num2 = rnd.Next(1, 12);
+                    int answer = num1 * num2;
+                    Console.WriteLine("What is {0} x {1}?", num1, num2);
+                    int ans = Convert.ToInt32(Console.ReadLine());
+                    if (ans == answer)
+                    {
+                        score = score + 1;
+                        Console.WriteLine("Well done, that is correct, your score is " + score);
+                    }
+                    else
+                    {
+                        Console.WriteLine("That is incorrect, your score is still " + score);
+                    }
+                    
+                }
+            }
+            else
+            {
+                Console.WriteLine("Exiting now");
+                Console.ReadKey();
+                Environment.Exit(0);
+            }
+
+            Console.ReadKey();
+            
+        }
+    }
+}
