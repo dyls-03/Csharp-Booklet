@@ -1,0 +1,27 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _2._2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            const double pi = 3.14159265359;
+
+            Console.WriteLine("Welcome to the cylinder program");
+            Console.WriteLine("Please enter the radius of the cylinder");
+            double radius = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Please enter the height of the cylinder");
+            double height = Convert.ToDouble(Console.ReadLine());
+            double volume = (pi * (radius * radius)) * height;
+            double SA = (2* pi * (radius * radius)) + (2 * pi * radius * height);
+            Console.WriteLine("The volume of your cyclinder is " + volume);
+            Console.WriteLine("The surface area of your cylinger is " + SA);
+            Console.ReadKey();
+        }
+    }
+}
