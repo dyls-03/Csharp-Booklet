@@ -1,0 +1,53 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _3._5
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("What is the cost of your good");
+            double cost = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Are you entitled to a concession discount - enter yes or no");
+            string ans = Console.ReadLine();
+            if (ans == "yes")
+            {
+                Console.WriteLine("Please enter your conession type");
+                Console.WriteLine("Enter ST if you are a student");
+                Console.WriteLine("Enter SN if you are a senior citizen");
+                Console.WriteLine("Enter CH if you are a cardholder");
+                Console.WriteLine("Enter CN if you have a discount voucher");
+                string answer = Console.ReadLine();
+
+                switch (answer)
+                {
+                    case "ST":
+                        Console.WriteLine("As a student the cost of your goods is " + (cost - (cost * 0.1)));
+                        break;
+                    case "SN":
+                        Console.WriteLine("As a senior citizen the cost of your goods is " + (cost - (cost * 0.125)));
+                        break;
+                    case "CH":
+                        Console.WriteLine("As a cardholder the cost of your goods is " + (cost - (cost * 0.2)));
+                        break;
+                    case "CN":
+                        Console.WriteLine("As you have a discount voucher the cost of your goods is " + (cost - (cost * 0.075)));
+                        break;
+                    default:
+                        Console.WriteLine("As a student the cost of your goods is " + cost);
+                        break;
+                }
+            }
+            else
+            {
+                Console.WriteLine("The undiscounted cost of your goods is " + cost);
+            }
+
+            Console.ReadKey();
+        }
+    }
+}
