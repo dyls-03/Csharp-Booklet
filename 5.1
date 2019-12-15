@@ -1,0 +1,29 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _5._1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string[] Clubs = new string[5];
+
+            for (int x = 0; x <= 4; x++)
+            {
+                Console.WriteLine("What is the name of the football club you want to store?");
+                Clubs[x] = Console.ReadLine();
+            }
+
+            for (int x = 0; x <= 4; x++)
+            {
+                Console.WriteLine(Clubs[x]);
+            }
+            Console.ReadKey();
+
+        }
+    }
+}
