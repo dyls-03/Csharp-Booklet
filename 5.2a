@@ -1,0 +1,47 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _5._2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string[] Clubs = new string[5];
+            Clubs[0] = "Liverpool";
+            Clubs[1] = "Everton";
+            Clubs[2] = "Stoke City";
+            Clubs[3] = "Man United";
+            Clubs[4] = "Man City";
+            
+
+            Console.WriteLine("What club do you want to search for?");
+            string search = Console.ReadLine();
+            //int y = -1;
+            Boolean found = false;
+
+            for (int x = 0; x < 5; x ++)
+            {
+                if (Clubs[x] == search)
+                {
+                    found = true;
+                }
+            }
+
+            if (found == true)
+            {
+                Console.WriteLine("That club is in the list");
+            }
+            else
+            {
+                Console.WriteLine("That club is not in the list");
+            }
+
+            Console.ReadKey();
+
+        }
+    }
+}
