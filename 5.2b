@@ -1,0 +1,39 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _5._2b
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string[] Clubs = new string[5];
+            string[] SortedClubs = new string[5];
+            Clubs[0] = "Liverpool";
+            Clubs[1] = "Everton";
+            Clubs[2] = "Stoke City";
+            Clubs[3] = "Man United";
+            Clubs[4] = "Man City";
+
+            Console.WriteLine("What club do you want to search?");
+            string clubname = Console.ReadLine();
+
+            Array.Sort(Clubs);
+            int lol = Array.BinarySearch(Clubs, clubname);
+            if (lol == 1 || lol == 2 || lol == 3 || lol == 4 || lol == 5 || lol == 0)
+            {
+                
+                Console.WriteLine("Club is in the list");
+            }
+            else
+            {
+                Console.WriteLine("Club is not in the list");
+            }
+            
+            Console.ReadKey();
+        }
+    }
+}
