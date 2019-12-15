@@ -1,0 +1,96 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Collections;
+
+namespace _5._4
+{
+    class Program
+    {
+        static void LineBreak()
+        {
+            Console.WriteLine(" ");
+        }
+
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Would you like to input your own numbers - yes or no?");
+            string answer = Console.ReadLine();
+
+            LineBreak();
+
+            Random rnd = new Random();
+
+            int[] numbers = new int[6];
+            int max = 5;
+            if (answer == "yes" || answer == "Yes")
+            {
+                for (int x = 0; x < max; x ++ )
+                {
+                    Boolean Valid = false;
+                    do
+                    {
+                        LineBreak();
+                        Console.WriteLine("Please enter a number");
+                        int num = Convert.ToInt32(Console.ReadLine());
+                        if (num >= 1 && num <= 60)
+                        {
+                            Valid = true;
+                            numbers[x] = num;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Make sure it is between 1 and 60");
+                            Console.WriteLine("Please try again");
+                        }
+                    } while (Valid == false);
+                }
+            }
+            else
+            {
+                for (int x = 0; x < max; x++)
+                {
+                    numbers[x] = rnd.Next(1, 60);
+                }
+            }
+
+            Boolean Raffle = false;
+
+            for (int x = 0; x < max; x++)
+            {
+                if (numbers[x] == 10 || numbers[x] == 20 || 
+                    numbers[x] == 30 || numbers[x] == 40 || 
+                    numbers[x] == 50 || numbers[x] == 60)
+                {
+                    Raffle = true;
+                }
+            }
+            max = max + 1;
+            if (Raffle == true)
+            {
+                
+                numbers[5] = rnd.Next(1, 60);
+                Array.Sort(numbers);
+                LineBreak();
+                Console.WriteLine("Your numbers:");
+                for (int x = 0; x < max; x++)
+                {
+                    Console.WriteLine(numbers[x]);
+                }
+            }
+            else
+            {
+                Array.Sort(numbers);
+                LineBreak();
+                Console.WriteLine("Your numbers:");
+                for (int x = 1; x < max; x++)
+                {
+                    Console.WriteLine(numbers[x]);
+                }
+            }
+            Console.ReadKey();
+        }
+    }
+}
