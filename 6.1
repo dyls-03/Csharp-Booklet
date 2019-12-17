@@ -1,0 +1,79 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _6._1
+{
+    class Program
+    {
+        public class Globals
+        {
+            public static string secretword;
+            public static string guess;
+        }
+
+        static void Menu()
+        {
+            Console.WriteLine("Welcome to the guessing program menu - choose your option");
+            Console.WriteLine("1 - Change the secret word");
+            Console.WriteLine("2 - Make a guess");
+            Console.WriteLine("3- Quit");
+        }
+
+        static void Changing()
+        {
+            Console.WriteLine("What is the secret word");
+            Globals.secretword = Console.ReadLine();
+        }
+
+        static void Quit()
+        {
+            Console.WriteLine("Thank you for playing secret word");
+            Environment.Exit(0);
+        }
+
+        static void Guess()
+        {
+            Console.WriteLine("Guess the secret word");
+            Globals.guess = Console.ReadLine();
+            if (Globals.guess == Globals.secretword)
+            {
+                Console.WriteLine("Well done - you have guessed the secret word");
+            }
+            else
+            {
+                Console.WriteLine("Sorry, that is not the secret word");
+            }
+        }
+
+        static void Main(string[] args)
+        {
+
+            Globals.secretword = "Computer";
+            int menuoption;
+            do
+            {
+                Menu();
+                menuoption = Convert.ToInt32(Console.ReadLine());
+
+                switch (menuoption)
+                {
+                    case 1:
+                        Changing();
+                        break;
+                    case 2:
+                        Guess();
+                        break;
+                    case 3:
+                        Quit();
+                        break;
+                }
+
+            } while (menuoption == 1 || menuoption == 2);
+
+            Console.ReadKey();
+        }
+    }
+}
