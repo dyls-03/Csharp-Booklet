@@ -1,0 +1,50 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _5._5
+{
+    class Program
+    {
+        public struct Superheroes
+        {
+            public string Name;
+            public int Lifespan;
+            public string Skill;
+            public int Strength;
+            public double Speed;
+        }
+        static void Main(string[] args)
+        {
+            Superheroes[] Cards = new Superheroes[4];
+            for (int x = 0; x < 4; x ++)
+            {
+                Console.WriteLine("Please enter the name of your hero");
+                Cards[x].Name = Console.ReadLine();
+                Console.WriteLine("Please enter it's lifespan");
+                Cards[x].Lifespan = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Please enter your hero's skill");
+                Cards[x].Skill = Console.ReadLine();
+                Console.WriteLine("Please enter your hero's strength");
+                Cards[x].Strength = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Please enter the speed of your hero");
+                Cards[x].Speed = Convert.ToDouble(Console.ReadLine());
+
+            }
+            for (int x = 0; x < 4; x++)
+            {
+                Console.WriteLine(Cards[x].Name);
+                Console.WriteLine(Cards[x].Lifespan);
+                Console.WriteLine(Cards[x].Skill);
+                Console.WriteLine(Cards[x].Strength);
+                Console.WriteLine(Cards[x].Speed);
+            }
+
+            Console.ReadKey();
+
+
+        }
+    }
+}
