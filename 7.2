@@ -1,0 +1,31 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _7._2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello and wleomce to the Space Wars Name program");
+            Console.WriteLine("Please enter your first name");
+            string FirstName = Console.ReadLine();
+            Console.WriteLine("Please enter your second name");
+            string SecName = Console.ReadLine();
+            Console.WriteLine("Please enter your mother's first name");
+            string MumsName = Console.ReadLine();
+            Console.WriteLine("Please enter the name of the city/ town you were born in");
+            string TownName = Console.ReadLine();
+
+            string Spacename1 = (SecName.Substring(0, 3) + FirstName.Substring(0, 2));
+            string Spacename2 = (MumsName.Substring(0, 2) + TownName.Substring(0, 3));
+
+            Console.WriteLine("Your space name is {0} {1}", Spacename1, Spacename2);
+
+            Console.ReadKey();
+        }
+    }
+}
