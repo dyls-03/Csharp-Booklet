@@ -1,0 +1,82 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Threading;
+using System.IO;
+
+namespace _9._1
+{
+    class Program
+    {
+
+        static void LineBreak()
+        {
+            Console.WriteLine(" ");
+        }
+
+        static void Delay()
+        {
+            Thread.Sleep(300);
+        }
+
+        static void Main(string[] args)
+        {
+            string filename = "users.txt";
+            bool NeverTrue = false;
+
+            do
+            {
+                bool MenuComplete = false;
+                int ans = 0;
+
+                do
+                {
+                    Console.Clear();
+                    Console.WriteLine("This is the password entry program - do you want to:");
+                    Delay();
+                    LineBreak();
+                    Console.WriteLine("1 - add a new username and password");
+                    Delay();
+                    Console.WriteLine("2 - Output the username and password file");
+                    Delay();
+                    Console.WriteLine("3 - Quit the program");
+
+                    try
+                    {
+                        ans = Convert.ToInt32(Console.ReadLine());
+                        if (ans == 3)
+                        {
+                            Environment.Exit(0);
+                        }
+                        else if (ans == 1 || ans == 2)
+                        {
+                            MenuComplete = true;
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        Console.WriteLine("Invalid response, press ENTER to try again");
+                        Console.ReadKey();
+                    }
+                } while (MenuComplete == false);
+
+                if (ans == 1)
+                {
+                    Console.WriteLine("Please enter a username");
+                    string user = Console.ReadLine();
+                    Console.WriteLine("Please enter a password");
+                    string pass = Console.ReadLine();
+                    File.WriteAllText(filename, (user + " " + pass));
+                }
+                else
+                {
+                    Console.WriteLine(File.ReadAllText(filename));
+
+                    Console.ReadKey();
+                }
+            } while (NeverTrue == false);
+        }
+    }
+}
