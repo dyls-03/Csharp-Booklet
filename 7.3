@@ -1,0 +1,53 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _7._3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Random rnd = new Random();
+            int CharGen;
+            string Pass = "";
+            int Points = 0;
+
+            for (int x = 0; x < 8; x++)
+            {
+                CharGen = rnd.Next(34, 126);
+                Pass = (Pass + Convert.ToString((char)CharGen));
+                if (CharGen > 64 && CharGen < 91)
+                {
+                    Points = Points + 10;
+                }
+                if ((CharGen > 90 && CharGen < 97) || CharGen > 122 || (CharGen < 65 && CharGen > 57) || CharGen < 48)
+                {
+                    Points = Points + 5;
+                }
+            }
+            string Type;
+
+            if (Points > 39)
+            {
+                Type = "strong";
+            }
+            else if (Points > 24)
+            {
+                Type = "medium";
+            }
+            else
+            {
+                Type = "weak";
+            }
+
+            
+            Console.WriteLine("Your password is " + Pass);
+            Console.WriteLine("Your password score is " + Points);
+            Console.WriteLine("Your password is " + Type);
+            Console.ReadKey();
+        }
+    }
+}
