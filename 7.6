@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _7._6
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string s = "I am going to check every word of this sentence for the keywords";
+            char delimiter = ' ';
+            string[] substrings = s.Split(delimiter);
+            foreach (var word in substrings)
+            {
+                if (word == "check" || word == "word" || word == "sentence")
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                }
+                Console.Write(word + " ");
+            }
+
+            Console.ReadKey();
+        }
+    }
+}
