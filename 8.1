@@ -1,0 +1,111 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _8._1
+{
+    class Program
+    {
+        public class Globals
+        {
+            public static bool GameComplete = false;
+            public static string ans;
+            public static Random rnd = new Random();
+        }
+
+        static void DisplayMenu()
+        {
+            Console.WriteLine("Would you like to play of quit");
+            ValidMenuChoice();
+        }
+
+        static void PlayGame()
+        {
+            
+            int turn = Globals.rnd.Next(1, 2);
+            int UserScore = 0;
+            int CompScore = 0;
+            int roll;
+
+            bool Complete = false;
+            do
+            {
+                if (turn == 1)
+                {
+                    Console.WriteLine("Your turn");
+                    roll = RollDice();
+                    Console.WriteLine("You rolled a " + roll);
+                    UserScore = roll + UserScore;
+                    turn = 2;
+                    if (UserScore >= 30)
+                    {
+                        Console.WriteLine("You win");
+                        Complete = true;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Computers turn");
+                    roll = RollDice();
+                    Console.WriteLine("Computer rolled a " + roll);
+                    CompScore = roll + CompScore;
+                    turn = 1;
+                    if (CompScore >= 30)
+                    {
+                        Console.WriteLine("You lose");
+                        Complete = true;
+                    }
+                }
+            } while (Complete == false);
+
+            RollDice();
+        }
+
+        static void ValidMenuChoice()
+        {
+            bool valid = false;
+            do
+            {
+                try
+                {
+                    Globals.ans = Console.ReadLine();
+                    if (Globals.ans == "play")
+                    {
+                        valid = true;
+                    }
+                    else if (Globals.ans == "quit")
+                    {
+                        Environment.Exit(0);
+                    }
+                    else
+                    {
+                        valid = false;
+                    }
+                }
+                catch (Exception)
+                {
+                    valid = false;
+                }
+            } while (valid == false);
+        }
+
+        static int RollDice()
+        {
+            
+            return Globals.rnd.Next(1, 6);
+        }
+
+        static void Main(string[] args)
+        {
+            do
+            {
+                DisplayMenu();
+                PlayGame();
+            } while (Globals.GameComplete == false);
+
+
+        }
+    }
+}
