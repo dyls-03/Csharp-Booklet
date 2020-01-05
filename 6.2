@@ -1,0 +1,28 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _6._2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Please enter your first number");
+            int num1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Please enter your second number");
+            int num2 = Convert.ToInt32(Console.ReadLine());
+            int answer = Addition(num1, num2);
+            Console.WriteLine("Answer = " + answer);
+            Console.ReadKey();
+        }
+
+        static int Addition(int one, int two)
+        {
+            int result = one + two;
+            return result;
+        }
+    }
+}
