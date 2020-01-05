@@ -1,0 +1,38 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _7._1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string cat = "The domestic cat is a small, typically furry, carnivorous mammal. They are often called house cats";
+            Console.WriteLine("1:");
+            string StrTemp = cat.Replace("cat", "dog");
+            Console.WriteLine(StrTemp.Replace("cats","dogs"));
+            Console.WriteLine("2:");
+            Console.WriteLine(cat.Length);
+            Console.WriteLine("3:");
+            Console.WriteLine(cat.Substring(66,31));
+            Console.WriteLine("4:");
+            Console.WriteLine(cat.IndexOf("cat"));
+            Console.WriteLine("5:");
+            int index = cat.IndexOf(".");
+            Console.WriteLine(cat.Insert(index + 1, " There are a number of different breeds."));
+            Console.WriteLine("6:");
+            Console.WriteLine(cat.Remove(66));
+            Console.WriteLine("7:");
+            char delimiter = ' ';
+            string[] substrings = cat.Split(delimiter);
+            foreach (var word in substrings)
+            {
+                Console.WriteLine(word);
+            }
+            Console.ReadKey();
+        }
+    }
+}
