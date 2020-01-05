@@ -1,0 +1,29 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _6._3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] Marks = new int[5];
+            for (int x = 0; x < 5; x ++)
+            {
+                Console.WriteLine("Please enter the student's mark");
+                Marks[x] = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Percentage = {0} %", Percentage(Marks[x]));
+                Console.ReadKey();
+            }
+        }
+
+        static int Percentage(int mark)
+        {
+            int percentage = (int)Math.Round((double)(100 * mark) / 60);
+            return percentage;
+        }
+    }
+}
